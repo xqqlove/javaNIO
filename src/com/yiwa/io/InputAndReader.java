@@ -29,7 +29,7 @@ public class InputAndReader {
         FileInputStream fileInputStream = null;
         try {
 //            File file=new File("D:\\qiangInFile\\file1.txt");
-            fileInputStream = new FileInputStream("D:/qiangInFile/file1.txt");
+            fileInputStream = new FileInputStream("e:\\io.txt");
             byte[] b = new byte[1024];
             int hsaRead = 0;
             while ((hsaRead = fileInputStream.read(b)) > 0) {
@@ -95,7 +95,11 @@ public class InputAndReader {
         try {
             InputStreamReader reader=new InputStreamReader(System.in);
             BufferedReader bufferedReader=new BufferedReader(reader);
-            FileOutputStream fileOutputStream=new FileOutputStream("D:/qiangInFile/file14.txt");
+            File file=new File("e:/file14.txt");
+            if (!file.exists()){
+                file.createNewFile();
+            }
+            FileOutputStream fileOutputStream=new FileOutputStream(file);
             BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(fileOutputStream);
             byte [] b=new byte[2048];
             String buf=null;
@@ -121,8 +125,12 @@ public class InputAndReader {
         try {
             reader =new InputStreamReader(System.in);
             bufferedReader=new BufferedReader(reader);
-            fileOutputStream=new FileOutputStream("D:/qiangInFile/file14.txt");
-            bufferedOutputStream.flush();
+//            File file=new File("e:/file14.txt");
+//            if (!file.exists()){
+//                file.createNewFile();
+//            }
+            fileOutputStream=new FileOutputStream("e:/file14.txt");
+//            bufferedOutputStream.flush();
             byte [] b=null;
             String buf=null;
             while((buf=bufferedReader.readLine())!=null){

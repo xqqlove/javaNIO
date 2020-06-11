@@ -19,6 +19,11 @@ public class FileOutPut {
         buffer.flip();
         TestBuffer.output("切换buffer到读模式后",buffer);
         fc.write(buffer);
+        TestBuffer.output("写出后",buffer);
+        buffer.flip();
+        TestBuffer.output("切换模式后",buffer);
+        buffer.clear();
+        TestBuffer.output("clear()后",buffer);
         fout.close();
 
     }

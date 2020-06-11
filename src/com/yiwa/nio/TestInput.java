@@ -34,7 +34,7 @@ public class TestInput {
     public void method1() throws IOException{
         FileInputStream fileInputStream=null;
         try {
-            fileInputStream=new FileInputStream("D:/qiangInFile/file1.txt");
+            fileInputStream=new FileInputStream("e:\\io.txt");
             FileChannel channel = fileInputStream.getChannel();
             ByteBuffer buf=ByteBuffer.allocate(1024);
             int read = channel.read(buf);
